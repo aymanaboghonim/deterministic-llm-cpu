@@ -1,4 +1,4 @@
-[![CI - Deterministic CPU Inference](https://github.com/aymanaboghonim/deterministic-llm-cpu/actions/workflows/ci.yml/badge.svg)](https://github.com/aymanaboghonim/deterministic-llm-cpu/actions/workflows/ci.yml)
+[![CI - Deterministic CPU Inference](https://github.com/aymanaboghonim/deterministic-llm-cpu/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/aymanaboghonim/deterministic-llm-cpu/actions/workflows/ci.yml)
 ![Hardware](https://img.shields.io/badge/Hardware-CPU%20Only%20%7C%20Zero%20CUDA-emerald)
 ![Python](https://img.shields.io/badge/Python-3.12%2B-blue?logo=python&logoColor=white)
 ![Package Manager](https://img.shields.io/badge/uv-Astral-purple)
