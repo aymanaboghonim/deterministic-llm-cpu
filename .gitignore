@@ -14,6 +14,8 @@ __pycache__/
 .marimo/
 .cache/
 hf_cache/
+models/
+*.gguf
 
 # OS / Editor
 .DS_Store

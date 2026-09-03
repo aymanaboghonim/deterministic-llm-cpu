@@ -5,6 +5,8 @@ description = "Verifying bit-level computational determinism of small language m
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "accelerate>=1.14.0",
+    "gguf>=0.19.0",
     "marimo>=0.11.0",
     "torch>=2.4.0",
     "transformers>=4.48.0",
