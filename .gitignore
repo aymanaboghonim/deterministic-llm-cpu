@@ -11,6 +11,7 @@ __pycache__/
 
 # Framework & Model Caches
 .marimo/
+__marimo__/
 .cache/
 hf_cache/
 models/
