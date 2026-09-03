@@ -1,0 +1,22 @@
+# Virtual Environments & Packaging
+.venv/
+uv.lock
+dist/
+build/
+*.egg-info/
+
+# Python runtime caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Framework & Model Caches
+.marimo/
+.cache/
+hf_cache/
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
