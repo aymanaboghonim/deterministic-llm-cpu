@@ -1,3 +1,9 @@
+[![CI - Deterministic CPU Inference](https://github.com/aymanaboghonim/deterministic-llm-cpu/actions/workflows/ci.yml/badge.svg)](https://github.com/aymanaboghonim/deterministic-llm-cpu/actions/workflows/ci.yml)
+![Hardware](https://img.shields.io/badge/Hardware-CPU%20Only%20%7C%20Zero%20CUDA-emerald)
+![Python](https://img.shields.io/badge/Python-3.12%2B-blue?logo=python&logoColor=white)
+![Package Manager](https://img.shields.io/badge/uv-Astral-purple)
+![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+
 # Deterministic SLM Inference on CPU
 
 An empirical verification harness demonstrating that autoregressive token decoding in Small Language Models (SLMs) is a closed, bit-level deterministic algebraic computation when isolated under strict single-process CPU constraints.
