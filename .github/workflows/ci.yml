@@ -1,0 +1,54 @@
+name: CI - Deterministic CPU Inference
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-cpu-determinism:
+    runs-on: ubuntu-latest
+
+    # Hardware & thread concurrency hardening
+    env:
+      PYTHONHASHSEED: "0"
+      OMP_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup uv Package Manager
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          version: "latest"
+
+      - name: Ensure Python 3.12 Runtime
+        run: uv python install 3.12
+
+      - name: Install CPU-Only Dependencies
+        run: make install
+
+      - name: Audit Dependency Purity (Zero CUDA/GPU Leakage)
+        run: make test
+
+      - name: Cache GGUF Model Checkpoint
+        id: cache-model
+        uses: actions/cache@v4
+        with:
+          path: models/
+          key: model-smollm2-135m-q4_k_m-v1
+
+      - name: Download Model (Cache Miss Fallback)
+        if: steps.cache-model.outputs.cache-hit != 'true'
+        run: make download
+
+      - name: Run Headless 100-Pass Self-Consistency Verification
+        run: make run
